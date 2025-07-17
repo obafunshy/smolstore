@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
               </div>
             </div>
             <div className="socials">
-              <p>© <a href="hhtps://cowebplus.com">Cowebplus</a> 2025 <br />Built with NextJS & <a target="_blank" href="https//fantacss.smoljames.com">FantaCSS 🔥</a></p>
+              <p>© <a href="https://cowebplus.com">Cowebplus</a> 2025 <br />Built with NextJS & <a target="_blank" href="https//fantacss.smoljames.com">FantaCSS 🔥</a></p>
               <div className="social-links">
                 <Link href={'/'} target="_blank"><i className="fa-brands fa-github"></i></Link>
                 <Link href={'/'} target="_blank"><i className="fa-brands fa-youtube"></i></Link>
