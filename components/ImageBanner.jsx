@@ -16,8 +16,7 @@ export default function ImageBanner() {
         <div className="banner-images">
             <img className="low-res-img" src="low_res/banner.jpeg" alt="banner-low-res" />
             <img ref={imgRef} className="high-res-img" src="med_res/banner.png" alt="banner-high-res" style={{ opacity: isLoaded ? 1 : 0 }} onLoad={() => {
-                // when the high resolution is completely loaded, this callback function will be executed and the
-                // intention is to get it to take this initially image, and now make it visible 
+                // when the high resolution is completely loaded, this callback function will be executed and the intention is to get it to take this initially image, and now make it visible 
                 setIsLoaded(true)
             }} />
             <div className="cta-btns-container">
