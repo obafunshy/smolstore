@@ -4,6 +4,7 @@ import Head from "./head";
 import Link from "next/link";
 import Cart from "@/components/Cart";
 import EmailInput from "@/components/EmailInput";
+import ProductsProvider from "@/context/ProductContact";
 
 export const metadata = {
   title: "Smolstore",
@@ -12,6 +13,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <ProductsProvider>
     <html lang="en">
       <Head />
       <body>
@@ -65,5 +67,6 @@ export default function RootLayout({ children }) {
         </div>
       </body>
     </html>
+    </ProductsProvider>
   );
 }

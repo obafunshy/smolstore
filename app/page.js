@@ -12,14 +12,22 @@ export async function getProducts() {
 export default async function Home() {
 
     const products = await getProducts()
-    console.log(products)
+    let planner = null
+    let stickers = []
 
+    for (let product of products) {
+      if(product.name === 'Medieval Dragon Month Planner') {
+        planner = product
+        continue
+      } 
+       stickers.push(product)
+    }
 
   return (
     <>
       <ImageBanner />
       <section>
-        <Products />
+        <Products planner={planner} stickers={stickers} />
       </section>
     </>
   );

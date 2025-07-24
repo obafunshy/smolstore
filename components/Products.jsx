@@ -2,19 +2,13 @@
 import { useState } from "react"
 import Portal from "./Portal"
 
-export default function Products()  {
+export default function Products(props)  {
+    const { planner, stickers } = props
+    console.log(planner)
+    console.log(stickers)
     const [portalImage, setPortalImage] = useState(null)
 
-    const stickerDescriptions = {
-        CSS_HTML_Javascript: "Core web technologies for structure, styling, interactivity.",
-        Docker: "Platform for containerizing, deploying, and scaling applications.",
-        Firebase: "Cloud platform for databases, authentication, and app backend.",
-        NextJS: "React-based framework for server-side rendering and static sites.",
-        NodeJS: "JavaScript runtime for building scalable backend applications.",
-        PostgreSQL: "Robust open-source database with advanced querying capabilities.",
-        ReactJS: "JavaScript library for building interactive user interfaces."
-    }
-    const stickers = Object.keys(stickerDescriptions)
+    if(!stickers.length || !planner) {return null }
 
     return (
         <>
@@ -43,7 +37,7 @@ export default function Products()  {
                         <p className="text-large planner-header">
                             Medieval Dragon Month Planner
                         </p>
-                        <h3><span>$</span>14.99</h3>
+                        <h3><span>$</span>{planner.prices[0].unit_amount/100}</h3>
                         <p>Step into a realm of fantasy and organization with our <strong>Medieval Dragon Month Planner</strong>! This high-resolution PNG asset combines the fierce elegance of dragons with intricate medieval designs to create a planner that's not only functional but also a work of art. Whether you&apos;re jotting down quests, planning battles, or just scheduling your weekly grocery run, this planner is your ultimate companion.</p>
                         <ul>
                             <li><strong>Epic Dragon Artwork:</strong> Stunning hand-drawn dragon motifs and medieval-inspired borders make every month feel legendary.
@@ -64,15 +58,16 @@ export default function Products()  {
                         <p>Choose from our custom design tech logos </p>
                         <div className="sticker-container">
                             {stickers.map((sticker, stickerIndex) => {
+                                let stickerImgUrl = sticker.name.replaceAll(' Sticker.png', '').replaceAll(' ', '_')
                                 return (
                                     <div key={stickerIndex} className="sticker-card">
-                                        <button onClick={() => {setPortalImage(sticker)}} className="img-button">
-                                            <img src={`low_res/${sticker}.jpeg`} alt={`${sticker}-low-res`} />
+                                        <button onClick={() => {setPortalImage(stickerImgUrl)}} className="img-button">
+                                            <img src={`low_res/${stickerImgUrl}.jpeg`} alt={`${stickerImgUrl}-low-res`} />
                                         </button>
                                         <div className="sticker-info">
-                                            <p className="text-medium">{sticker.replaceAll('-', ' ')} Sticker.png</p>
-                                            <p>{stickerDescriptions[sticker]}</p>
-                                            <h4><span>$</span>5.99</h4>
+                                            <p className="text-medium">{sticker.name}</p>
+                                            <p>{sticker.description}</p>
+                                            <h4><span>£</span>{sticker.prices[0].unit_amount/100}</h4>
                                             <button>Add to cart</button>
                                         </div>
                                     </div>
