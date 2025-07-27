@@ -1,12 +1,12 @@
 'use client'
 import { useState } from "react"
 import Portal from "./Portal"
+import { useProducts } from "@/context/ProductContact"
 
 export default function Products(props)  {
     const { planner, stickers } = props
-    console.log(planner)
-    console.log(stickers)
     const [portalImage, setPortalImage] = useState(null)
+    const {cart, handleIncrementProduct} = useProducts()
 
     if(!stickers.length || !planner) {return null }
 
@@ -47,7 +47,10 @@ export default function Products(props)  {
                             </li>
                         </ul>
                         <div className="purchase-btns">
-                            <button>Add to cart</button>
+                            <button onClick={() => {
+                                const plannerPriceId = planner.default_price
+                                handleIncrementProduct(plannerPriceId, 1)
+                            }}>Add to cart</button>
                         </div>
                     </div>
                 </div>
@@ -68,7 +71,10 @@ export default function Products(props)  {
                                             <p className="text-medium">{sticker.name}</p>
                                             <p>{sticker.description}</p>
                                             <h4><span>£</span>{sticker.prices[0].unit_amount/100}</h4>
-                                            <button>Add to cart</button>
+                                            <button onClick={() => {
+                                                const stickerPriceId = sticker.default_price
+                                                handleIncrementProduct(stickerPriceId, 1)
+                                            }}>Add to cart</button>
                                         </div>
                                     </div>
                                 )

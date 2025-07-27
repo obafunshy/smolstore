@@ -41,7 +41,17 @@ header {
   display: flex;
   align-items: center;
   justify-self: flex-end;
+  position: relative;
+  padding-right: 0.5rem;
 } 
+
+.cart-num {
+  position: absolute;
+  top: -5;
+  right: 0;
+  color: #030615;
+  font-family: "Grenze", serif;
+}
 
 .header-content hi {
   background: #030615;
