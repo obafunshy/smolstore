@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🛍️ Smolstore - A Modern E-commerce Experience
+🌟 Overview
+Smolstore is a modern, responsive e-commerce platform built with Next.js, offering a seamless shopping experience for tech enthusiasts and productivity seekers. The store features a beautiful UI, smooth animations, and an intuitive user interface.
 
-## Getting Started
+✨ Features
+🎨 Beautiful UI/UX
 
-First, run the development server:
+Smooth scroll animations
+High-resolution image loading with low-res placeholders
+Responsive design for all devices
+Modern and clean interface
+🛒 Shopping Experience
 
-```bash
+Product browsing with high-quality images
+Interactive product previews
+Easy-to-use shopping cart
+Smooth checkout process
+🎯 Product Categories
+
+Tech Stickers Collection
+Medieval Dragon Month Planner
+More products coming soon!
+🛠️ Technical Features
+
+Client-side state management
+Optimized image loading
+Smooth scroll-to-section functionality
+Responsive navigation
+🚀 Tech Stack
+Frontend Framework: Next.js
+Styling: CSS Modules & Custom CSS
+State Management: React Context API
+Payment Processing: Stripe
+Deployment: AWS Amplify
+Image Optimization: Next.js Image Optimization
+📦 Installation
+Clone the repository:
+
+git clone [your-repo-url]
+Install dependencies:
+
+npm install
+Create a .env file and add your environment variables:
+
+STRIPE_SECRET_KEY=your_stripe_secret_key
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+Run the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000 in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🏗️ Project Structure
+online_store/
+├── app/
+│   ├── components/
+│   │   ├── Cart.jsx
+│   │   ├── EmailInput.jsx
+│   │   ├── ImageBanner.jsx
+│   │   ├── Portal.jsx
+│   │   ├── Products.jsx
+│   │   └── ScrollToTop.jsx
+│   ├── context/
+│   │   └── ProductContext.jsx
+│   ├── globals.css
+│   └── layout.js
+├── public/
+│   ├── low_res/
+│   └── med_res/
+└── README.md
+🎨 Design System
+The project uses a custom design system with:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Colors: Clean, modern color palette
+Typography: Readable and accessible fonts
+Spacing: Consistent spacing system
+Components: Reusable UI components
+Animations: Smooth transitions and hover effects
+🔧 Development
+Running Tests
+npm test
+Building for Production
+npm run build
+Linting
+npm run lint
+🚀 Deployment
+This project is configured for deployment on AWS Amplify. See DEPLOYMENT.md for detailed deployment instructions.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Quick Deployment Steps
+Push your code to a Git repository
+Connect your repository to AWS Amplify
+Configure environment variables in the Amplify Console
+Deploy your application
+🤝 Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Learn More
+Fork the repository
+Create your feature branch (git checkout -b feature/AmazingFeature)
+Commit your changes (git commit -m 'Add some AmazingFeature')
+Push to the branch (git push origin feature/AmazingFeature)
+Open a Pull Request
+📝 License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+👨‍💻 Author
+Oluwaseun Familusi - Obafunshy
+🙏 Acknowledgments
+Built with Next.js
+Styled with FantaCSS
+Icons by Font Awesome
+Made with ❤️ by Obafunshy
